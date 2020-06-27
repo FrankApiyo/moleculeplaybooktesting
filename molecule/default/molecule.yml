@@ -1,0 +1,17 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint main.yml
+platforms:
+  - name: instance
+    image: solita/ubuntu-systemd:16.04
+    pre_build_image: false
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
