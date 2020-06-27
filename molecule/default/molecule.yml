@@ -6,7 +6,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  ansible-lint main.yml
+  ansible-lint
 platforms:
   - name: instance
     image: solita/ubuntu-systemd:16.04
